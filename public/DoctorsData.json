@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Dr. Shahadat Hussain",
+    "degrees": ["MBBS", "MD"],
+    "specialization": "General Medicine",
+    "working_at": "TMSS Medical College & Rafatullah Community Hospital, Bogura",
+    "reg_no": "BD12451254",
+    "availability": ["Sunday", "Monday", "Thursday"],
+    "consultation_fee": {
+      "amount": 273,
+      "currency": "BDT",
+      "includes_vat": true
+    },
+    "is_available": true,
+    "years_of_experience": 6,
+    "image_url": "https://st2.depositphotos.com/36844638/44286/v/600/depositphotos_442867882-stock-illustration-circular-worker-avatar-icon-illustration.jpg"
+  },
+  {
+    "name": "Dr. Ayesha Rahman",
+    "degrees": ["MBBS", "FCPS"],
+    "specialization": "Cardiology",
+    "working_at": "Square Hospital, Dhaka",
+    "reg_no": "BD12587412",
+    "availability": ["Saturday", "Tuesday", "Wednesday"],
+    "consultation_fee": {
+      "amount": 320,
+      "currency": "BDT",
+      "includes_vat": true
+    },
+    "is_available": true,
+    "years_of_experience": 4,
+    "image_url": "https://st.depositphotos.com/1007566/54676/v/600/depositphotos_546760876-stock-illustration-female-doctor-with-stethoscope.jpg"
+  },
+  {
+    "name": "Dr. Tanvir Hasan",
+    "degrees": ["MBBS", "MD"],
+    "specialization": "Neurology",
+    "working_at": "United Hospital, Dhaka",
+    "reg_no": "BD12487965",
+    "availability": ["Monday", "Wednesday", "Friday"],
+    "consultation_fee": {
+      "amount": 450,
+      "currency": "BDT",
+      "includes_vat": true
+    },
+    "is_available": true,
+    "years_of_experience": 4,
+    "image_url": "https://st2.depositphotos.com/36844638/44286/v/600/depositphotos_442867882-stock-illustration-circular-worker-avatar-icon-illustration.jpg"
+  },
+  {
+    "name": "Dr. Nusrat Jahan",
+    "degrees": ["MBBS", "MS"],
+    "specialization": "Gynecology",
+    "working_at": "Ibrahim Cardiac Hospital & Research Institute, Dhaka",
+    "reg_no": "BD12654123",
+    "availability": ["Sunday", "Tuesday", "Thursday"],
+    "consultation_fee": {
+      "amount": 380,
+      "currency": "BDT",
+      "includes_vat": true
+    },
+    "is_available": true,
+    "years_of_experience": 5,
+    "image_url": "https://st.depositphotos.com/1007566/54676/v/600/depositphotos_546760876-stock-illustration-female-doctor-with-stethoscope.jpg"
+  },
+  {
+    "name": "Dr. Imran Chowdhury",
+    "degrees": ["MBBS", "FCPS"],
+    "specialization": "Orthopedics",
+    "working_at": "Chittagong Medical College Hospital",
+    "reg_no": "BD12784523",
+    "availability": ["Saturday", "Monday", "Wednesday"],
+    "consultation_fee": {
+      "amount": 300,
+      "currency": "BDT",
+      "includes_vat": true
+    },
+    "is_available": true,
+    "years_of_experience": 6,
+    "image_url": "https://st2.depositphotos.com/36844638/44286/v/600/depositphotos_442867882-stock-illustration-circular-worker-avatar-icon-illustration.jpg"
+  },
+  {
+    "name": "Dr. Farzana Akter",
+    "degrees": ["MBBS", "DDV"],
+    "specialization": "Dermatology",
+    "working_at": "Popular Diagnostic Centre, Dhaka",
+    "reg_no": "BD12896547",
+    "availability": ["Sunday", "Tuesday", "Friday"],
+    "consultation_fee": {
+      "amount": 250,
+      "currency": "BDT",
+      "includes_vat": true
+    },
+    "is_available": true,
+    "years_of_experience": 4,
+    "image_url": "https://st.depositphotos.com/1007566/54676/v/600/depositphotos_546760876-stock-illustration-female-doctor-with-stethoscope.jpg"
+  },
+  {
+    "name": "Dr. Rafiul Islam",
+    "degrees": ["MBBS", "MS"],
+    "specialization": "Urology",
+    "working_at": "Bangabandhu Sheikh Mujib Medical University (BSMMU)",
+    "reg_no": "BD12987546",
+    "availability": ["Monday", "Wednesday", "Thursday"],
+    "consultation_fee": {
+      "amount": 400,
+      "currency": "BDT",
+      "includes_vat": true
+    },
+    "is_available": true,
+    "years_of_experience": 3,
+    "image_url": "https://st2.depositphotos.com/36844638/44286/v/600/depositphotos_442867882-stock-illustration-circular-worker-avatar-icon-illustration.jpg"
+  },
+  {
+    "name": "Dr. Tahmina Haque",
+    "degrees": ["MBBS", "FCPS"],
+    "specialization": "Pediatrics",
+    "working_at": "Dhaka Shishu Hospital",
+    "reg_no": "BD13098547",
+    "availability": ["Sunday", "Tuesday", "Thursday"],
+    "consultation_fee": {
+      "amount": 310,
+      "currency": "BDT",
+      "includes_vat": true
+    },
+    "is_available": true,
+    "years_of_experience": 6,
+    "image_url": "https://st.depositphotos.com/1007566/54676/v/600/depositphotos_546760876-stock-illustration-female-doctor-with-stethoscope.jpg"
+  },
+  {
+    "name": "Dr. Khalid Mahmud",
+    "degrees": ["MBBS", "MD"],
+    "specialization": "Internal Medicine",
+    "working_at": "Rajshahi Medical College Hospital",
+    "reg_no": "BD13254789",
+    "availability": ["Saturday", "Monday", "Thursday"],
+    "consultation_fee": {
+      "amount": 270,
+      "currency": "BDT",
+      "includes_vat": true
+    },
+    "is_available": true,
+    "years_of_experience": 6,
+    "image_url": "https://st2.depositphotos.com/36844638/44286/v/600/depositphotos_442867882-stock-illustration-circular-worker-avatar-icon-illustration.jpg"
+  },
+  {
+    "name": "Dr. Samira Alam",
+    "degrees": ["MBBS", "FCPS"],
+    "specialization": "Ophthalmology",
+    "working_at": "National Institute of Ophthalmology, Dhaka",
+    "reg_no": "BD13458741",
+    "availability": ["Sunday", "Tuesday", "Friday"],
+    "consultation_fee": {
+      "amount": 330,
+      "currency": "BDT",
+      "includes_vat": true
+    },
+    "is_available": true,
+    "years_of_experience": 5,
+    "image_url": "https://st.depositphotos.com/1007566/54676/v/600/depositphotos_546760876-stock-illustration-female-doctor-with-stethoscope.jpg"
+  },
+  {
+    "name": "Dr. Arif Hossain",
+    "degrees": ["MBBS", "FCPS"],
+    "specialization": "ENT Specialist",
+    "working_at": "Khulna Medical College Hospital",
+    "reg_no": "BD13654789",
+    "availability": ["Saturday", "Monday", "Wednesday"],
+    "consultation_fee": {
+      "amount": 290,
+      "currency": "BDT",
+      "includes_vat": true
+    },
+    "is_available": true,
+    "years_of_experience": 7,
+    "image_url": "https://st2.depositphotos.com/36844638/44286/v/600/depositphotos_442867882-stock-illustration-circular-worker-avatar-icon-illustration.jpg"
+  },
+  {
+    "name": "Dr. Nilufa Sultana",
+    "degrees": ["MBBS", "FCPS"],
+    "specialization": "Psychiatry",
+    "working_at": "National Institute of Mental Health, Dhaka",
+    "reg_no": "BD13789456",
+    "availability": ["Sunday", "Wednesday", "Thursday"],
+    "consultation_fee": {
+      "amount": 360,
+      "currency": "BDT",
+      "includes_vat": true
+    },
+    "is_available": true,
+    "years_of_experience": 6,
+    "image_url": "https://st.depositphotos.com/1007566/54676/v/600/depositphotos_546760876-stock-illustration-female-doctor-with-stethoscope.jpg"
+  }
+]
