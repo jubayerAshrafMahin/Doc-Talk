@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 
 const DoctorCard = ({doctor}) => {
 
+    const navigate = useNavigate();
     return (
         <div className='rounded-xl p-8 bg-white text-left'>
             <img src={doctor.image_url} alt="doctor's image" className='w-[200px] rounded-lg mx-auto mb-2'/>
@@ -23,7 +25,8 @@ const DoctorCard = ({doctor}) => {
             })}
             <span className='text-gray-600 text-sm'>{doctor.specialization}</span>
             <p className='text-sm py-2 border-t-[0.5px] border-gray-300 border-dashed my-2'><i class="fa-regular fa-registered"></i>{` Reg No ${doctor.reg_no}`}</p>
-            <button className='font-medium px-5 py-2 rounded-full border border-blue-600 text-blue-600 w-full cursor-pointer hover:text-white hover:bg-blue-600 duration-200'>View Details</button>
+            <button className='font-medium px-5 py-2 rounded-full border border-blue-600 text-blue-600 w-full cursor-pointer hover:text-white hover:bg-blue-600 duration-200'
+            onClick={()=>navigate('/doctor/'+doctor.reg_no)}>View Details</button>
             {/* 
             {doctor.specialization}
             {doctor.working_at}

@@ -1,10 +1,11 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import Banner from '../../Components/Banner/Banner';
 import DoctorCard from '../../Components/DoctorCard/DoctorCard';
 import successDoctor from '../../assets/successDoctor.png';
 import successPatients from '../../assets/success-patients.png';
 import successReview from '../../assets/success-review.png';
 import successStuffs from '../../assets/success-staffs.png';
+import CountUp from 'react-countup';
 
 const successInfo=[
         {
@@ -35,9 +36,8 @@ const successInfo=[
 
 const Home = ({doctorsPromise}) => {
 
+    const [allDoctors, setAllDoctors] = useState(0);
     const doctors = use(doctorsPromise);
-    console.log(doctors);
-
     
     return (
         <div className='min-h-screen text-center content-center bg-gray-100 max-w-7xl mx-auto pb-20'>
@@ -46,9 +46,18 @@ const Home = ({doctorsPromise}) => {
             <p className='max-w-[900px] mx-auto mb-5'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. Whether it's a routine checkup or urgent consultation, book appointments in minutes and receive quality care you can trust.</p>
             <div className='grid grid-cols-3 gap-5 mb-10'>
                 {
-                    doctors.map(doctor=><DoctorCard doctor={doctor} key={doctor.reg_no}></DoctorCard>)
+                    doctors.map((doctor,index)=>{
+                        return(
+                            <div className={(!allDoctors) && (index >= 6)? 'hidden':'block'}>
+                                <DoctorCard doctor={doctor} key={doctor.reg_no}></DoctorCard>
+                            </div>
+                        )
+                    })
                 }
             </div>
+            <button className={`px-5 py-2 rounded-full bg-blue-600 text-white mb-10 cursor-pointer`} onClick={()=>setAllDoctors(!allDoctors)}>
+                {`${allDoctors ? 'View Less Doctors' : 'View All Doctors'}`}
+            </button>
             <h1 className='text-4xl font-bold mb-5'>We Provide Best Medical Services</h1>
             <p className='max-w-[900px] mx-auto mb-5'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. </p>
             <div className='grid grid-cols-4 gap-5'>
@@ -64,7 +73,7 @@ const SuccessCard = ({success}) =>{
     return(
         <div className='bg-white rounded-lg py-5 px-10 text-left'>
             <img src={success.image} alt="image" className='mb-2'/>
-            <h1 className='text-3xl font-extrabold mb-2'>{success.number}+</h1>
+            <h1 className='text-3xl font-extrabold mb-2'><CountUp end={success.number} duration={6}/>+</h1>
             <p className='text-gray-600'>{success.title}</p>
         </div>
     )
