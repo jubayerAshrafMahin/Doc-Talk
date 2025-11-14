@@ -1,13 +1,30 @@
-import React, { use } from 'react';
-import { useParams } from 'react-router';
-
+//Doctor.jsx
+import React, { use, useContext } from 'react';
+import { useNavigate, useParams } from 'react-router';
+import { ToastContainer } from 'react-toastify';
+import { ToastContext } from '../Root/Root';
+import { addAppointment, getAppointment } from '../../Utils/addAppointment';
+import { showFailureToast } from '../../Utils/showToast';
 const Doctor = ({ doctorsPromise }) => {
 
+    const [toastShowing, setToastShowing] = useContext(ToastContext);
+    const navigate = useNavigate();
     const doctors = use(doctorsPromise);
     const { reg } = useParams();
-    console.log(doctors, reg);
     const doctor = doctors.find(doc => doc.reg_no === reg);
-    console.log(doctor);
+
+    function handleBookAppointment(reg) {
+        let appointment = getAppointment();
+        if (!appointment.includes(reg)) {
+            addAppointment(reg, appointment);
+            setToastShowing(true);
+            navigate('/my-bookings');
+        } else {
+            showFailureToast();
+        }
+    }
+
+    document.title = "DocTalk | Doctor's Profile - " + reg;
     return (
         <div className='max-w-7xl mx-auto pt-5 pb-20 mb-5 '>
             <div className='bg-white rounded-lg py-12 px-5 content-center text-center mb-5'>
@@ -49,8 +66,20 @@ const Doctor = ({ doctorsPromise }) => {
                     <span className='px-3 py-1 rounded-full bg-green-500/10 border-[0.5px] border-green-600 text-green-600 text-xs'>Doctor is available today</span>
                 </div>
                 <p className='px-3 py-2 rounded-full bg-yellow-500/10 border-[0.5px] border-yellow-500 text-yellow-500 text-sm'><i class="fa-solid fa-circle-exclamation"></i> Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.</p>
-                <button className='px-5 py-2 rounded-full bg-blue-600 text-white mt-5 w-full cursor-pointer'>Book Appointment Now</button>
+                <button className='px-5 py-2 rounded-full bg-blue-600 text-white mt-5 w-full cursor-pointer' onClick={()=>{handleBookAppointment(reg)}}>Book Appointment Now</button>
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </div>
     );
 };

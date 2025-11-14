@@ -34,8 +34,11 @@ const successInfo=[
         }
     ]
 
-const Home = ({doctorsPromise}) => {
+    
 
+const Home = ({doctorsPromise}) => {
+    
+    document.title = 'DocTalk | Home';
     const [allDoctors, setAllDoctors] = useState(0);
     const doctors = use(doctorsPromise);
     

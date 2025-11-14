@@ -1,8 +1,11 @@
+//routes.jsx
 import React, { Suspense } from "react";
 import { createBrowserRouter } from "react-router";
 import Root from "../Pages/Root/Root";
 import Home from "../Pages/Home/Home";
 import Doctor from "../Pages/Doctor/Doctor";
+import PageNotFound from "../Pages/PageNotFound/PageNotFound";
+import MyBookings from "../Pages/MyBookings/MyBookings";
 
 const doctorsPromise = fetch('/DoctorsData.json').then(res => res.json());
 
@@ -14,20 +17,20 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Suspense fallback={<p className="text-center min-h-screen content-center">Loading...</p>}>
-                    <Home doctorsPromise={doctorsPromise}></Home>
-                </Suspense>
+                element: <Home doctorsPromise={doctorsPromise}></Home>
             },
             {
                 path: '/doctor/:reg',
-                element: <Suspense fallback={<p className="text-center min-h-screen content-center">Loading...</p>}>
-                    <Doctor doctorsPromise={doctorsPromise}></Doctor>
-                </Suspense>
+                element: <Doctor doctorsPromise={doctorsPromise}></Doctor>
+            },
+            {
+                path: '/my-bookings',
+                element: <MyBookings doctorsPromise={doctorsPromise}></MyBookings>
             }
         ]
     },
     {
         path: '*',
-        element: <p className="min-h-screen content-center text-6xl font-bold text-center">Page Not Found</p>
+        element: <PageNotFound></PageNotFound>
     }
 ])
