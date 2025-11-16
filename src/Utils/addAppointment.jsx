@@ -15,3 +15,10 @@ export function addAppointment(id, myAppointment){
     // console.log("this is the new appointment", newAppointment);
     localStorage.setItem("appointment", newAppointment);
 }
+
+export function deleteAppointment(id, myAppointment){
+     
+    let newAppointment = myAppointment.filter(app => app != id);
+    newAppointment = JSON.stringify(newAppointment);
+    localStorage.setItem("appointment", newAppointment);
+}

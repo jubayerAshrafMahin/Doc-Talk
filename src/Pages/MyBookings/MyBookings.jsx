@@ -4,23 +4,34 @@ import { showSuccessToast } from '../../Utils/showToast';
 import { ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router';
 import { getAppointment } from '../../Utils/addAppointment';
+import BookingCard from '../../Components/BookingCard/BookingCard';
+import { deleteAppointment } from '../../Utils/addAppointment';
+import { showCancelAppointmentToast } from '../../Utils/showToast';
 
 const MyBookings = ({ doctorsPromise }) => {
     const doctors = use(doctorsPromise);
     console.log(doctors);
     const [toastShowing, setToastShowing] = useContext(ToastContext);
-    const appointment = getAppointment();
+    const appointmentIDs = getAppointment();
+    const appointments = doctors.filter(doctor=> appointmentIDs.includes(doctor.reg_no));
+    console.log(appointments);
+
+    function handleCancelAppointment(id) {
+        let appointment = getAppointment();
+        deleteAppointment(id, appointment);
+        showCancelAppointmentToast();
+    }
     useEffect(() => {
         if (toastShowing) {
             showSuccessToast();
             console.log("Toast showing");
-            setToastShowing(false); // Reset after showing toast
+            setToastShowing(false);
         }
     }, [toastShowing, setToastShowing]);
 
     document.title = "DocTalk | My Bookings"
     return (
-        <div className='max-w-7xl mx-auto content-center text-center'>
+        <div className='max-w-7xl mx-auto'>
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
@@ -33,7 +44,9 @@ const MyBookings = ({ doctorsPromise }) => {
                 pauseOnHover
                 theme="light"
             />
-            {appointment.length===0 && <NoBookingsYet />}
+            {appointmentIDs.length===0? <NoBookingsYet /> : (
+                appointments.map(appointment => <BookingCard key={appointment.reg_no} appointment={appointment} handleCancelAppointment={handleCancelAppointment}></BookingCard>)
+            )}
         </div>
     );
 };
@@ -41,7 +54,7 @@ const MyBookings = ({ doctorsPromise }) => {
 function NoBookingsYet() {
     const navigate = useNavigate();
     return (
-        <div>
+        <div className='content-center text-center min-h-screen'>
             <h1 className='text-3xl font-bold mb-3'>You have not booked any appointment yet.</h1>
             <p className='text-gray-700'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience.</p>
             <button className='px-5 py-2 rounded-full bg-blue-600 text-white mt-5 w-fit cursor-pointer' onClick={()=>{navigate('/')}}>Book an Appointment</button>
