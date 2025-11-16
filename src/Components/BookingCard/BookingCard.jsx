@@ -16,7 +16,7 @@ const BookingCard = ({ appointment, handleCancelAppointment }) => {
                     })}
                     <span className='text-gray-600 text-sm'>{appointment.specialization}</span>
                 </div>
-                <p className='text-sm text-gray-700'>Appointment Fee: {appointment.consultation_fee.amount} Taka + VAT</p>
+                <p className='text-sm text-gray-700'>Appointment Fee: {appointment.consultation_fee_BDT} Taka + VAT</p>
             </div>
             <button className='px-5 py-2 rounded-full text-red-600 border border-red-600 w-full cursor-pointer font-medium bg-red-50' onClick={() => { handleCancelAppointment(appointment.reg_no) }}>Cancel Appointment</button>
         </div>

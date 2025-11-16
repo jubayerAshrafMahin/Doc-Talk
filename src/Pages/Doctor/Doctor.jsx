@@ -54,7 +54,7 @@ const Doctor = ({ doctorsPromise }) => {
                             (doctor.availability).map(day => <span className='px-3 py-1 rounded-full bg-green-500/10 border-[0.5px] border-green-600 text-green-600 text-xs ml-2'>{day}</span>)
                         }
                         <p className='font-medium mt-3'>Consultation Fee:
-                            <span className='text-blue-600 font-semibold mx-2'>Taka {parseFloat(doctor.consultation_fee.amount).toFixed(2)}</span>
+                            <span className='text-blue-600 font-semibold mx-2'>Taka {parseFloat(doctor.consultation_fee_BDT).toFixed(2)}</span>
                             <span className='text-gray-600 font-normal'>(inc. vat) Per Consultation</span>
                         </p>
                     </div>
