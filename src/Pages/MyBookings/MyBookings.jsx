@@ -7,6 +7,7 @@ import { getAppointment } from '../../Utils/addAppointment';
 
 const MyBookings = ({ doctorsPromise }) => {
     const doctors = use(doctorsPromise);
+    console.log(doctors);
     const [toastShowing, setToastShowing] = useContext(ToastContext);
     const appointment = getAppointment();
     useEffect(() => {
@@ -19,7 +20,7 @@ const MyBookings = ({ doctorsPromise }) => {
 
     document.title = "DocTalk | My Bookings"
     return (
-        <div className='min-h-screen max-w-7xl mx-auto content-center text-center'>
+        <div className='max-w-7xl mx-auto content-center text-center'>
             <ToastContainer
                 position="top-right"
                 autoClose={5000}

@@ -1,5 +1,4 @@
-{
-  "questions": [
+[
     {
       "id": 1,
       "question": "What is useState and how does it work in React?",
@@ -22,8 +21,8 @@
     },
     {
       "id": 5,
-      "question": "Tell us something about useFormStatus() (explore and explain)",
+      "question": "Tell us something about useFormStatus()",
       "answer": "useFormStatus() is a React hook from the React DOM form actions API (introduced with React Server Components). It provides the status of a form submission inside a <form> component that uses server actions or async functions. It returns states like pending, data, and method, allowing you to show UI feedback such as loading spinners or disable buttons during form submission. It is especially useful in server-side form handling workflows in modern React frameworks like Next.js."
     }
   ]
-}
+

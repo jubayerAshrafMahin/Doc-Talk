@@ -13,10 +13,10 @@ const Root = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
-            <div className='bg-gray-100 px-5'>
+            <div className='bg-gray-100 min-h-screen'>
+                <Navbar></Navbar>
                 <Suspense fallback={
-                <div className="text-center min-h-screen flex flex-col items-center justify-center gap-1">
+                <div className="text-center flex flex-col items-center justify-center gap-1 min-h-screen">
                 <DNA
                 visible={true}
                 height="70"
@@ -28,7 +28,9 @@ const Root = () => {
                 <p className="text-sm">Loading...</p>
                 </div>}>
                     <ToastContext.Provider value={[toastShowing, setToastShowing]}>
-                        <Outlet ></Outlet>
+                        <div className='px-5'>
+                            <Outlet ></Outlet>
+                        </div>
                     </ToastContext.Provider>
                 </Suspense>
             </div>
