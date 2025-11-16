@@ -26,7 +26,7 @@ const MyBookings = ({ doctorsPromise }) => {
 
     document.title = "DocTalk | My Bookings"
     return (
-        <div className='max-w-7xl mx-auto -z-50 mt-5 pb-20'>
+        <div className='max-w-7xl mx-auto mt-5 pb-20'>
             <ToastContainer
                 position="top-right"
                 autoClose={5000}

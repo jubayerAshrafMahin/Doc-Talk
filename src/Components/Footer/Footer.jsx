@@ -17,10 +17,9 @@ const Footer = () => {
             </ul>
             <hr className='border border-gray-300 w-full' />
             <ul className='flex items-center gap-12 justify-center'>
-                <li><i class="fa-brands fa-facebook text-2xl text-blue-950"></i></li>
-                <li><i class="fa-brands fa-square-instagram text-2xl text-blue-950"></i></li>
-                <li><i class="fa-brands fa-linkedin text-2xl text-blue-950"></i></li>
-                <li><i class="fa-brands fa-youtube text-2xl text-blue-950"></i></li>
+                <li><a href="https://www.facebook.com/mahin.ashraf.731" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook text-2xl text-blue-950"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/jubayer-ashraf-mahin-ba2780337/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin text-2xl text-blue-950"></i></a></li>
+                <li><a href="https://github.com/jubayerAshrafMahin" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github text-2xl text-blue-950"></i></a></li>
             </ul>
         </div>
     );
