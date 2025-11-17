@@ -6,7 +6,7 @@ const Blogs = ({ blogsPromise }) => {
 
     const blogs = use(blogsPromise);
     console.log(blogs);
-
+    document.title = "DocTalk | Blogs";
     return (
         <div className='max-w-7xl mx-auto mt-5 pb-20'>
             <div className='bg-white rounded-lg py-12 px-5 content-center text-center mb-5'>

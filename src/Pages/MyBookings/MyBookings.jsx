@@ -71,6 +71,10 @@ function Appointments({ appointments }) {
             <div className='p-10 rounded-lg bg-white'>
                 <CustomShapeBarChart appointments={appointments}></CustomShapeBarChart>
             </div>
+            <div className='text-center mb-5 mt-10'>
+                <h1 className='text-3xl font-bold mb-3'>My Today's Appointments</h1>
+                <p className='text-gray-700'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience.</p>
+            </div>
             {
                 appointments.map(appointment => <BookingCard key={appointment.reg_no} appointment={appointment} handleCancelAppointment={handleCancelAppointment}></BookingCard>)
             }
