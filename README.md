@@ -1,10 +1,5 @@
 # DocTalk - Doctor Appointment Booking System
 
-![React](https://img.shields.io/badge/React-18.2.0-blue)
-![React Router](https://img.shields.io/badge/React_Router-6.0.0-orange)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0.0-cyan)
-![Local Storage](https://img.shields.io/badge/Local_Storage-Enabled-green)
-
 A modern, web application for booking doctor appointments built with React. Patients can browse verified doctors, view detailed profiles, and manage their appointments seamlessly.
 
 ## 🚀 Features
