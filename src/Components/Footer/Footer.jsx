@@ -13,7 +13,7 @@ const Footer = () => {
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/my-bookings">My Bookings</NavLink>
                 <NavLink to="/blogs">Blogs</NavLink>
-                <NavLink to="/k">Contact</NavLink>
+                <NavLink to="/contact">Contact</NavLink>
             </ul>
             <hr className='border border-gray-300 w-full' />
             <ul className='flex items-center gap-12 justify-center'>

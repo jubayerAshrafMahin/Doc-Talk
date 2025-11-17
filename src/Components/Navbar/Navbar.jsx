@@ -13,7 +13,7 @@ const Navbar = () => {
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/my-bookings">My Bookings</NavLink>
                     <NavLink to="/blogs">Blogs</NavLink>
-                    <NavLink to="/k">Contact</NavLink>
+                    <NavLink to="/contact">Contact</NavLink>
                 </ul>
                 <button className='px-5 py-2 rounded-full bg-blue-600 text-white'>Emergency</button>
             </div>

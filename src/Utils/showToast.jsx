@@ -2,7 +2,7 @@
 import { toast } from "react-toastify";
 
 export function showSuccessToast() {
-    toast.success('Appointment booked successfully!', {
+    toast.success(`Appointment scheduled successfully!`, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,

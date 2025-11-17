@@ -30,7 +30,7 @@ const Doctor = ({ doctorsPromise }) => {
         <div className='max-w-7xl mx-auto pt-5 pb-20 mb-5 '>
             <div className='bg-white rounded-lg py-12 px-5 content-center text-center mb-5'>
                 <h1 className='text-3xl font-bold mb-3'>Doctor's Profile Details</h1>
-                <p className='text-gray-700'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum quisquam voluptatum quia, quaerat modi repellat debitis harum fuga praesentium illo.</p>
+                <p className='text-gray-700'>Know your doctor better. Get all the information you need to know about about your doctor and book an appointment.</p>
             </div>
             <div>
                 {/* /doctor's info */}

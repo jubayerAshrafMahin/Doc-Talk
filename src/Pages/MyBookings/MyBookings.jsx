@@ -1,4 +1,4 @@
-import React, { use, useContext, useEffect } from 'react';
+import React, { use, useContext, useEffect, useState } from 'react';
 import { ToastContext } from '../Root/Root';
 import { showSuccessToast } from '../../Utils/showToast';
 import { ToastContainer } from 'react-toastify';
@@ -11,11 +11,11 @@ import CustomShapeBarChart from '../../Components/BarChart/BarChart.jsx';
 
 const MyBookings = ({ doctorsPromise }) => {
     const doctors = use(doctorsPromise);
-    console.log(doctors);
     const [toastShowing, setToastShowing] = useContext(ToastContext);
-    const appointmentIDs = getAppointment();
+    
+    const [appointmentIDs, setAppointmentIDs] = useState(getAppointment());
     const appointments = doctors.filter(doctor => appointmentIDs.includes(doctor.reg_no));
-    console.log(appointments);
+    
     useEffect(() => {
         if (toastShowing) {
             showSuccessToast();
@@ -23,6 +23,10 @@ const MyBookings = ({ doctorsPromise }) => {
             setToastShowing(false);
         }
     }, [toastShowing, setToastShowing]);
+
+    const refreshAppointments = () => {
+        setAppointmentIDs(getAppointment());
+    };
 
     document.title = "DocTalk | My Bookings"
     return (
@@ -41,8 +45,10 @@ const MyBookings = ({ doctorsPromise }) => {
             />
             {appointmentIDs.length === 0 ?
                 <NoBookingsYet /> :
-                <Appointments appointments={appointments}></Appointments>}
-
+                <Appointments 
+                    appointments={appointments} 
+                    refreshAppointments={refreshAppointments}
+                />}
         </div>
     );
 };
@@ -58,12 +64,13 @@ function NoBookingsYet() {
     )
 }
 
-function Appointments({ appointments }) {
+function Appointments({ appointments, refreshAppointments }) {
 
     function handleCancelAppointment(id) {
         let appointment = getAppointment();
         deleteAppointment(id, appointment);
         showCancelAppointmentToast();
+        refreshAppointments();
     }
 
     return (
@@ -76,7 +83,13 @@ function Appointments({ appointments }) {
                 <p className='text-gray-700'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience.</p>
             </div>
             {
-                appointments.map(appointment => <BookingCard key={appointment.reg_no} appointment={appointment} handleCancelAppointment={handleCancelAppointment}></BookingCard>)
+                appointments.map(appointment => (
+                    <BookingCard 
+                        key={appointment.reg_no} 
+                        appointment={appointment} 
+                        handleCancelAppointment={handleCancelAppointment}
+                    />
+                ))
             }
         </div>
     )
